@@ -5,8 +5,8 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <Navbar expand="lg" className="bg-body-tertiary">
-          <h1>Exploring Cities</h1>
+        <Navbar expand="lg">
+          <h1 className="explorador">Exploring Cities</h1>
           <p>Aquí podrás...</p>
         </Navbar>
       </header>

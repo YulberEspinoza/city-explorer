@@ -1,8 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import CitySearch from "./CitySearch";
 import LatLon from "./LatLon";
+import Map from "./Map";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -10,13 +11,13 @@ class Explorer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: " ",
-      location: " ",
-      latitude: " ",
-      longitude: " ",
+      searchQuery: "",
+      location: "",
+      latitude: "",
+      longitude: "",
       displayMap: false,
       displayError: false,
-      errorMessage: " ",
+      errorMessage: "",
     };
   }
   updateCity = (e) => {
@@ -35,12 +36,12 @@ class Explorer extends React.Component {
         displayError: false,
       });
     } catch (error) {
-      this.state({
+      this.setState({
         displayMap: false,
         displayError: true,
-        errorMessage:
-          error.response.status + ":" + error.response.data.console.error,
+        errorMessage: error.response.status + ":" + error.response.data.error,
       });
+      console.log(error);
     }
   };
 

@@ -6,8 +6,8 @@ class Footer extends React.Component {
     return (
       <footer>
         <Row xs={2} md={4} lg={6}>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
+          <Col>Yulber Espinoza</Col>
+          <Col>........................................................</Col>
         </Row>
       </footer>
     );
